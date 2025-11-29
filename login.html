@@ -6,31 +6,37 @@
     body {
       font-family: Arial;
       text-align: center;
-      padding: 60px;
+      padding: 20px;
     }
-    .loader {
-      font-size: 20px;
-      margin-top: 40px;
+    button.btnGoogle {
+      background: #4285F4;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+    }
+    img.hero {
+      width: 350px;
+      border-radius: 15px;
     }
   </style>
 </head>
 <body>
 
-  <h2>Conectando con Google...</h2>
-  <p class="loader">Por favor espera unos segundos ⏳</p>
+  <img src="https://raw.githubusercontent.com/Ch3lo94/Regalos_Boda/main/images/IMG-20251127-WA0008.jpg" class="hero">
 
-  <script>
-    // Apenas carga, consulta al servidor
-    google.script.run.withSuccessHandler(res => {
-      if (!res.ok) {
-        // Email ya había elegido → exit.html
-        window.location.href = res.url;
-        return;
-      }
-      // OK → Ir a regalos
-      window.location.href = res.url;
-    }).iniciarLogin();
-  </script>
+  <h2>Nos ayudarías mucho con estas cosas que nos faltan ❤️</h2>
+  <p>Por favor ingresá con tu cuenta de Google y seleccioná los regalos que deseas darnos.</p>
+
+  <!-- Botón -->
+  <button class="btnGoogle" onclick="window.location.href='auth.html'">
+    Acceder con Google
+  </button>
 
 </body>
 </html>
